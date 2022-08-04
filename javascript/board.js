@@ -4,7 +4,7 @@ const Cuadricula = require("./cuadricula");
 // let column = prompt("Ingrese las columnas");
 
 
-let board = new Cuadricula(5,5);
+let board = new Cuadricula(4,5);
 board.crearMatriz()
 board.llenarMatriz()
 board.generarCelulas()

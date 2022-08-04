@@ -1,18 +1,18 @@
 class Cuadricula{
-    constructor(columns, rows) {
-      this.columns = columns;
+    constructor(rows, columns) {
       this.rows = rows;
+      this.columns = columns;
       this.matriz = [];
     }
     crearMatriz() {
-        for(let i = 0; i < this.rows; i++){
-            this.matriz[i] = new Array(this.columns);
+        for(let i = 0; i < this.columns; i++){
+            this.matriz[i] = new Array(this.rows);
         }
         return this.matriz
     }
     llenarMatriz() {
-        for(let i = 0; i < this.rows; i++){
-          for(let j=0; j<this.columns;j++){
+        for(let i = 0; i < this.columns; i++){
+          for(let j=0; j<this.rows;j++){
             this.matriz[i][j]= Math.floor(Math.random()*2);
           }
         }
@@ -20,8 +20,8 @@ class Cuadricula{
     }
 
     generarCelulas(){
-        for(let i = 0; i < this.rows; i++){
-            for(let j=0; j<this.columns;j++){
+        for(let i = 0; i < this.columns; i++){
+            for(let j=0; j<this.rows;j++){
              this.matriz[i][j] === 1 ? this.matriz[i][j] = '*' : this.matriz[i][j] = '.'; 
             }
           }
@@ -38,75 +38,74 @@ class Cuadricula{
       }
       return '';
     }
-    
-    // check(rows, column) {
+    // check(columns, column) {
     //     if (
-    //       this.matriz[rows][column] === "." &&
-    //       countNeightbours(rows, column) === 3
+    //       this.matriz[columns][column] === "." &&
+    //       countNeightbours(columns, column) === 3
     //     ) {
-    //       secondGeneration[rows][column] = "*";
+    //       secondGeneration[columns][column] = "*";
     //     } else if (
-    //       this.matriz[rows][column] === "*" &&
-    //       (countNeightbours(rows, column) < 2 ||
-    //         countNeightbours(rows, column) > 3)
+    //       this.matriz[columns][column] === "*" &&
+    //       (countNeightbours(columns, column) < 2 ||
+    //         countNeightbours(columns, column) > 3)
     //     ) {
-    //       secondGeneration[rows][column] = ".";
+    //       secondGeneration[columns][column] = ".";
     //     } else {
-    //       this.matriz[rows][column] = secondGeneration[rows][column];
+    //       this.matriz[columns][column] = secondGeneration[columns][column];
     //     }
     //   }
 
-    // countNeightbours(rows, column) {
+    // countNeightbours(columns, column) {
     //     let count = 0;
-    //     if (this.matriz[rows][column] === ".") {
-    //       if (this.matriz[rows][column - 1] === "*") {
+    //     if (this.matriz[columns][column] === ".") {
+    //       if (this.matriz[columns][column - 1] === "*") {
     //         count = count + 1;
     //       }
-    //       if (this.matriz[rows][column + 1] === "*") {
+    //       if (this.matriz[columns][column + 1] === "*") {
     //         count = count + 1;
     //       }
-    //       if (this.matriz[rows - 1][column] === "*") {
+    //       if (this.matriz[columns - 1][column] === "*") {
     //         count = count + 1;
     //       }
-    //       if (this.matriz[rows + 1][column] === "*") {
+    //       if (this.matriz[columns + 1][column] === "*") {
     //         count = count + 1;
     //       }
-    //       if (this.matriz[rows + 1][column - 1] === "*") {
+    //       if (this.matriz[columns + 1][column - 1] === "*") {
     //         count = count + 1;
     //       }
-    //       if (this.matriz[rows + 1][column + 1] === "*") {
+    //       if (this.matriz[columns + 1][column + 1] === "*") {
     //         count = count + 1;
     //       }
-    //       if (this.matriz[rows - 1][column - 1] === "*") {
+    //       if (this.matriz[columns - 1][column - 1] === "*") {
     //         count = count + 1;
     //       }
-    //       if (this.matriz[rows - 1][column + 1] === "*") {
+    //       if (this.matriz[columns - 1][column + 1] === "*") {
     //         count = count + 1;
     //       }
     //       return count;
     //     } else {
-    //       if (this.matriz[rows][column - 1] === ".") {
+    //       if (this.matriz[columns][column - 1] === ".") {
     //         count = count + 1;
     //       }
-    //       if (this.matriz[rows][column + 1] === ".") {
+    //       if (this.matriz[columns][column + 1] === ".") {
     //         count = count + 1;
     //       }
-    //       if (this.matriz[rows - 1][column] === ".") {
+    //       if (this.matriz[columns - 1][column] === ".") {
     //         count = count + 1;
     //       }
-    //       if (this.matriz[rows + 1][column] === ".") {
+    //       if (this.matriz[columns + 1][column] === ".") {
     //         count = count + 1;
     //       }
-    //       if (this.matriz[rows + 1][column - 1] === ".") {
+    //       if (this.matriz[columns + 1][column - 1] === ".") {
     //         count = count + 1;
     //       }
-    //       if (this.matriz[rows + 1][column + 1] === ".") {
+    //       if (this.matriz[columns + 1][column + 1] === ".") {
     //         count = count + 1;
     //       }
-    //       if (this.matriz[rows - 1][column - 1] === ".") {
+    //       if (this.matriz[columns - 1][column - 1] === ".") {
     //         count = count + 1;
     //       }
-    //       if (this.matriz[rows - 1][column + 1] === ".") {
+    //       if (this.matriz[columns - 1][column + 1] === ".") {
     //         count = count + 1;
     //       }
     //       return count;
